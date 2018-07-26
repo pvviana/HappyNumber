@@ -10,7 +10,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, fields> {
         super(props);
 
         this.state = {
-            IsHappy: false
+            IsHappy: null
         }
 
         this.IsHappyNumber = this.IsHappyNumber.bind(this);

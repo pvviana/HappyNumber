@@ -35,6 +35,25 @@ namespace HappyNumber.Controllers
 
             return result;
         }
+
+        [HttpGet]
+        [Route("api/IsLucky")]
+        public bool IsLucky(int number)
+        {
+            int counter = 2;
+            int nextNumber = number;
+
+            if (counter > number)
+                return true;
+            if (number % counter == 0)
+                return false;
+
+            nextNumber -= nextNumber / counter;
+
+            counter++;
+
+            return IsLucky(nextNumber);
+        }
     }
 
 
